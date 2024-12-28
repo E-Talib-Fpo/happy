@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+   <head>
+      <link rel="stylesheet" href="style.css">
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Happy Birthday Friend Name</title>
+      <link href="https://fonts.googleapis.com/css?family=Josefin+Slab" rel="stylesheet"/> 
+      <link rel="shortcut icon" type="image/png" href="birthday.png">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+      <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+      <style>
+         body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Josefin Slab', serif;
+            overflow: hidden;
+         }
+
+         .message {
+            font-size: 36px;
+            color: #1e90ff;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            line-height: 1.5;
+         }
+
+         .highlight {
+            color: #ff4500;
+            font-size: 40px;
+            font-weight: bold;
+            text-shadow: 0px 0px 10px rgba(255, 69, 0, 0.8);
+         }
+
+         .emoji {
+            font-size: 48px;
+         }
+      </style>
+   </head>
+   <body>
+      <div id="container" style="display:none">
+         <div class="s-2"></div>
+         <div class="card">
+            <button class="button" onClick="window.open('index2.html');">
+              A Message For You
+           </button>
+         </div>
+         <div class="s-1"></div>
+         <div class="right-col"></div>
+      </div>
+      <span id="count"></span>
+
+      <div class="lording">
+         <div class="center">
+            <div class="ring"></div>
+            <span>loading...</span>
+         </div>
+      </div>
+      
+      <!-- رسالة تهنئة -->
+      <div id="home" class="home-style-2 slider-area" style="display:none">
+         <div class="particles-js" id="particles-js"></div>
+         <div class="message">
+            <p class="emoji">🎉🎂✨</p>
+            <p><span class="highlight">عيد ميلاد سعيد!</span></p>
+            <p style="color: #333; font-size: 24px;">
+          مرحابا بك زهرة المهم عيد ملاد سعيد كنتمن تعجبك هد المفاجأة  
+            </p>
+         </div>
+      </div>
+
+      <script>
+         setTimeout(function() {
+            $('.lording').hide()
+         }, 5000);
+         
+         setTimeout(function() {
+            $('#container').show();
+            $('#home').show();
+         }, 5199);
+      </script>
+   </body>
+</html>
