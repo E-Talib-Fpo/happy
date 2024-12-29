@@ -2,27 +2,48 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box; /* لتجنب مشاكل الحواف */
 }
 
 body {
+  margin: 0;
+  padding: 0;
   font-family: 'Josefin Slab', serif;
-  display: flex;
-  height: 100vh;
+  overflow-x: hidden; /* إخفاء التمرير الأفقي */
   background: rgb(20, 20, 20);
-  align-items: center;
-  justify-content: center;
-  --nav-link-load-time: 2s;
 }
 
 /* Center Alignment */
 .center {
   display: flex;
-  text-align: center;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  text-align: center;
 }
 
+/* Responsive Text Styling */
+.message {
+  font-size: 5vw; /* استخدام وحدات متجاوبة */
+  color: #1e90ff;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 1.5;
+}
+
+.highlight {
+  color: #ff4500;
+  font-size: 6vw; /* استخدام وحدات متجاوبة */
+  font-weight: bold;
+  text-shadow: 0px 0px 10px rgba(255, 69, 0, 0.8);
+}
+
+.emoji {
+  font-size: 8vw; /* استخدام وحدات متجاوبة */
+}
 /* Loading Ring Animation */
 .ring {
   position: absolute;
@@ -77,25 +98,31 @@ span {
 /* Main Container */
 #container {
   width: 100%;
-  height: 130vh;
-  background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .3)),
+  height: 100vh; /* تعديل الارتفاع */
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)),
       url(img/1.jpg) center no-repeat;
   background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: fadeIn 2s; /* تم تقليل المدة الزمنية من 10s إلى 3s */
+  animation: fadeIn 2s;
 }
 
 @keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /* Card Styles */
 .card {
-  width: 350px;
-  height: 550px;
+  width: 90%; /* نسبة من الشاشة لتكون متجاوبة */
+  max-width: 350px; /* حد أقصى للعرض */
+  height: auto; /* ليكون متجاوباً */
+  aspect-ratio: 2/3; /* للحفاظ على النسبة بين العرض والارتفاع */
   position: relative;
   perspective: 1000px;
 }
@@ -104,7 +131,7 @@ span {
   position: absolute;
   top: 0;
   left: 0;
-  background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .7)),
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
       url(images/2.jpg) no-repeat;
   background-size: cover;
   width: 50%;
@@ -120,23 +147,24 @@ span {
 
 .card:hover .right-side {
   transform: rotateY(360deg);
-  text-align: right;
 }
 
+/* Button Styles */
 button {
   position: relative;
   height: 60px;
-  width: 200px;
-  top: 580px;
-  right: -70px;
+  width: 80%;
+  max-width: 200px; /* حد أقصى للعرض */
+  margin: 20px auto 0; /* محاذاة الزر بالوسط */
   border: none;
   outline: none;
   color: rgb(85, 226, 19);
   background: #111;
   cursor: pointer;
   border-radius: 5px;
-  font-size: 18px;
+  font-size: 16px;
   font-family: 'Raleway', sans-serif;
+  display: block;
 }
 
 button:before {
@@ -152,7 +180,7 @@ button:before {
   filter: blur(5px);
   background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
   background-size: 400%;
-  transition: opacity .2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
   animation: animate 10s linear infinite;
 }
 
@@ -161,7 +189,37 @@ button:hover:before {
 }
 
 @keyframes animate {
-  0% { background-position: 0 0; }
-  50% { background-position: 400% 0; }
-  100% { background-position: 0 0; }
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+/* Media Queries for Smaller Devices */
+@media (max-width: 768px) {
+  .message {
+    font-size: 6vw; /* تصغير النصوص */
+  }
+
+  .highlight {
+    font-size: 7vw; /* تصغير النصوص */
+  }
+
+  .emoji {
+    font-size: 10vw; /* تصغير النصوص */
+  }
+
+  .card {
+    width: 95%; /* توسيع الكرت ليغطي الشاشة بشكل أفضل */
+  }
+
+  button {
+    font-size: 14px;
+    width: 90%;
+  }
 }
