@@ -210,10 +210,6 @@ button:hover:before {
     font-size: 7vw; /* تصغير النصوص */
   }
 
-  .emoji {
-    font-size: 10vw; /* تصغير النصوص */
-  }
-
   .card {
     width: 95%; /* توسيع الكرت ليغطي الشاشة بشكل أفضل */
   }
