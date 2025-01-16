@@ -1,7 +1,7 @@
 // trigger to play music in the background with sweetalert
 window.addEventListener('load', () => {
     Swal.fire({
-        title: 'واش بغتي  الموسقى الا بلاش؟',
+        title: 'واش بغتي الموسيقى ولا بلاش؟',
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
@@ -17,7 +17,6 @@ window.addEventListener('load', () => {
         }
     });
 });
-
 
 // animation timeline
 const animationTimeline = () => {
